@@ -1,0 +1,1 @@
+#Diseño multihilos de OpenMP
