@@ -51,18 +51,18 @@ class compresor
         MPI_Type_create_struct(3, blocklen, disp, type, &MBTYPE);
         MPI_Type_commit(&MBTYPE);
 
-	    int size2=MBArr2.size();
-	    int size1=MBArr1.size();
-	    macrobloque mb2 [MBArr2.size()];
-	    macrobloque mb1 [MBArr1.size()];
+	    int size2=ArrImagen2.size();
+	    int size1=ArrImagen1.size();
+	    macrobloque mb2 [ArrImagen2.size()];
+	    macrobloque mb1 [ArrImagen1.size()];
         int tamEnviar = size1 / world_size;
 
         if (world_rank == 0){
-            mb2[MBArr2.size()];
-            copy(MBArr2.begin(), MBArr2.end(), mb2);
+            mb2[ArrImagen2.size()];
+            copy(ArrImagen2.begin(), ArrImagen2.end(), mb2);
 
-            mb1[MBArr1.size()];
-            copy(MBArr1.begin(), MBArr1.end(), mb1);
+            mb1[ArrImagen1.size()];
+            copy(ArrImagen1.begin(), ArrImagen1.end(), mb1);
         }
 
 	macrobloque mb1rec[tamEnviar];
